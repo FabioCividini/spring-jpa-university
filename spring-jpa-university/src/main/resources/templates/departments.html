@@ -7,30 +7,30 @@
 	<body>
 		<div class="container-fluid">
 			<div th:replace="resources :: nav"></div>
-			<h1 class="text-center p-3">Departments</h1 >
+			<h1 class="text-center p-3 fw-bold">Departments</h1 >
 			<hr/>
 			
 			<table class="table align-middle">
 				<thead>
 					<tr>
-						<th scope="col" class="col-md-2 table-info border border-dark">Name</th>
-						<th scope="col" class="col-md-2 table-info border border-dark">Address</th>
-						<th scope="col" class="col-md-2 table-info border border-dark">Phone number</th>
-						<th scope="col" class="col-md-2 table-info border border-dark">Email</th>
-						<th scope="col" class="col-md-2 table-info border border-dark">Website</th>
-						<th scope="col" class="col-md-2 table-info border border-dark">Head of department</th>
-						<th scope="col" class="col-md-2 table-info border border-dark">Details</th>
+						<th scope="col" class="col-md-2 table-info border border-dark text-center">Name</th>
+						<th scope="col" class="col-md-2 table-info border border-dark text-center">Address</th>
+						<th scope="col" class="col-md-2 table-info border border-dark text-center">Phone number</th>
+						<th scope="col" class="col-md-2 table-info border border-dark text-center">Email</th>
+						<th scope="col" class="col-md-2 table-info border border-dark text-center">Website</th>
+						<th scope="col" class="col-md-2 table-info border border-dark text-center">Head of department</th>
+						<th scope="col" class="col-md-2 table-info border border-dark text-center">Details</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr th:each="dep : ${list}">
-						<td class="border-start" th:text="${dep.name}"></td>		
-						<td class="border-start" th:text="${dep.address}"></td>
-						<td class="border-start" th:text="${dep.phone}"></td>
-						<td class="border-start" th:text="${dep.email}"></td>
-						<td class="border-start" th:text="${dep.website}"></td>
-						<td class="border-start" th:text="${dep.head}"></td>
-						<td class="border"><a class="btn btn-primary" th:href="@{|/department/${dep.id}|}">Details</a></td >
+						<td class="border-start text-center" th:text="${dep.name}"></td>		
+						<td class="border-start text-center" th:text="${dep.address}"></td>
+						<td class="border-start text-center" th:text="${dep.phone}"></td>
+						<td class="border-start text-center" th:text="${dep.email}"></td>
+						<td class="border-start text-center" th:text="${dep.website}"></td>
+						<td class="border-start text-center" th:text="${dep.head}"></td>
+						<td class="border text-center"><a class="btn btn-primary" th:href="@{|/department/${dep.id}|}">Details</a></td >
 					</tr >
 				</tbody>
 			</table>
