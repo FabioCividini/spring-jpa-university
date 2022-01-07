@@ -5,29 +5,32 @@
 		<title>Departments</title>
 	</head>
 	<body>
-		<div class="container">
-			<h1 class="text-center">Departments</h1 >
+		<div class="container-fluid">
+			<div th:replace="resources :: nav"></div>
+			<h1 class="text-center p-3">Departments</h1 >
 			<hr/>
 			
 			<table class="table align-middle">
 				<thead>
 					<tr>
-						<th scope="col">Name</th>
-						<th scope="col">Address</th>
-						<th scope="col">Phone_Number</th>
-						<th scope="col">Email</th>
-						<th scope="col">Website</th>
-						<th scope="col">Head_of_Department</th>
+						<th scope="col" class="col-md-2 table-info border border-dark">Name</th>
+						<th scope="col" class="col-md-2 table-info border border-dark">Address</th>
+						<th scope="col" class="col-md-2 table-info border border-dark">Phone number</th>
+						<th scope="col" class="col-md-2 table-info border border-dark">Email</th>
+						<th scope="col" class="col-md-2 table-info border border-dark">Website</th>
+						<th scope="col" class="col-md-2 table-info border border-dark">Head of department</th>
+						<th scope="col" class="col-md-2 table-info border border-dark">Details</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="departments : ${departments}">
-						<td th:text="${departments.name}"></td>		
-						<td th:text="${departments.address}"></td>
-						<td th:text="${departments.phone}"></td>
-						<td th:text="${departments.email}"></td>
-						<td th:text="${departments.website}"></td>
-						<td th:text="${departments.headOfDepartment}"></td>
+					<tr th:each="dep : ${list}">
+						<td class="border-start" th:text="${dep.name}"></td>		
+						<td class="border-start" th:text="${dep.address}"></td>
+						<td class="border-start" th:text="${dep.phone}"></td>
+						<td class="border-start" th:text="${dep.email}"></td>
+						<td class="border-start" th:text="${dep.website}"></td>
+						<td class="border-start" th:text="${dep.head}"></td>
+						<td class="border"><a class="btn btn-primary" th:href="@{|/department/${dep.id}|}">Details</a></td >
 					</tr >
 				</tbody>
 			</table>

@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<div th:replace="resources :: head"></div>
+		<title>Department Details</title>
+	</head>
+	<body>
+		<div class="container-fluid mb-3">
+			<div th:replace="resources :: nav"></div>
+			<h1 class="text-center p-3" th:text="${department.name}"></h1 >
+			<hr/>
+			
+			<div class="container d-flex">
+				<div class="card text-center p-2 shadow-lg me-2" style="width: 18rem;">
+					  <div class="card-header bg-info fw-bold">Name degree</div>
+					  
+					  <ul class="list-group list-group-flush" th:each="d : ${department.getDegrees()}">
+					  		<li class="list-group-item" style="height: 140px;" th:text="${d.name}"></li>
+					  </ul>
+				</div>
+				
+				<div class="card text-center p-2 shadow-lg me-2" style="width: 18rem;">
+					  <div class="card-header bg-info fw-bold">Level</div>
+					  
+					  <ul class="list-group list-group-flush" th:each="d : ${department.getDegrees()}">
+					  		<li class="list-group-item" style="height: 140px;" th:text="${d.level}"></li>
+					  </ul>
+				</div>
+				
+				<div class="card text-center p-2 shadow-lg me-2" style="width: 18rem;">
+					  <div class="card-header bg-info fw-bold">Address</div>
+					  
+					  <ul class="list-group list-group-flush" th:each="d : ${department.getDegrees()}">
+					  		<li class="list-group-item" style="height: 140px;" th:text="${d.address}"></li>
+					  </ul>
+				</div>
+				
+				<div class="card text-center p-2 shadow-lg me-2" style="width: 18rem;">
+					  <div class="card-header bg-info fw-bold">Email</div>
+					  
+					  <ul class="list-group list-group-flush" th:each="d : ${department.getDegrees()}">
+					  		<li class="list-group-item" style="height: 140px;" th:text="${d.email}"></li>
+					  </ul>
+				</div>
+				
+				<div class="card text-center p-2 shadow-lg me-2" style="width: 18rem;">
+					  <div class="card-header bg-info fw-bold">Website</div>
+					  
+					  <ul class="list-group list-group-flush" th:each="d : ${department.getDegrees()}">
+					  		<li class="list-group-item" style="height: 140px;" th:text="${d.website}"></li>
+					  </ul>
+				</div>
+			</div>
+			<div th:replace="resources :: scripts"></div>
+		</div >
+	</body>
+</html>
